@@ -1,0 +1,355 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>OpenKilda GUI &mdash; OpenKilda  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Javadocs" href="../javadocs/index.html" />
+    <link rel="prev" title="Installation Guide" href="../installation-guide/index.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/openkilda.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribution/index.html">Contribution Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation-guide/index.html">Installation Guide</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">OpenKilda GUI</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#accessing-the-gui">Accessing the GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#login-credentials">Login Credentials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gui-features">GUI Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#openkilda-subsystem-web-interface">OpenKilda Subsystem Web Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#loading-the-kibana-dashboards">Loading the Kibana Dashboards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../javadocs/index.html">Javadocs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pce/index.html">Path Computation Engine (PCE)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../northbound-api/index.html">Northbound API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes/index.html">Release Notes</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">OpenKilda</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>OpenKilda GUI</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/gui/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="openkilda-gui">
+<h1>OpenKilda GUI<a class="headerlink" href="#openkilda-gui" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="accessing-the-gui">
+<h2>Accessing the GUI<a class="headerlink" href="#accessing-the-gui" title="Permalink to this headline">¶</a></h2>
+<p>OpenKilda includes a Graphical User Interface (GUI) to manually enter flows into the controller or display current status of different network elements. Using the default configuration, you can access the GUI at: <a class="reference external" href="http://localhost:1010/openkilda">http://localhost:1010/openkilda</a></p>
+</div>
+<div class="section" id="login-credentials">
+<h2>Login Credentials<a class="headerlink" href="#login-credentials" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Current version does not support individual user accounts. However, you need to use default login credentials to access system.</p>
+</div>
+<p><strong>ADMIN Credentials</strong></p>
+<ul class="simple">
+<li>username = admin</li>
+<li>password = admin</li>
+</ul>
+<p><strong>USER Credentials</strong></p>
+<ul class="simple">
+<li>username = user</li>
+<li>password = user</li>
+</ul>
+</div>
+<div class="section" id="gui-features">
+<h2>GUI Features<a class="headerlink" href="#gui-features" title="Permalink to this headline">¶</a></h2>
+<p>You will see login screen after launching GUI. By using default credentials, you will be able to login into system. On successful login, you will be redirected to home screen. On left, Different menu tabs will be shown like Home, Topology etc. User will be able to see default username on top right. On click, it will provide an option to logout from system.</p>
+<p>Click on Topology tab will open default Topology View which is a cluster-wide view of the network topology.
+Elements shown in base release are:</p>
+<p>ISL Link Details: Provides source and destination switch details</p>
+<ul class="simple">
+<li>Speed</li>
+<li>Latency</li>
+<li>Available Bandwidth</li>
+<li>Graph: The Graph View provides ISL link traffic flow between ports connecting the two switches, choose options:<ul>
+<li>Start_datetime</li>
+<li>End_datetime</li>
+<li>Metric</li>
+<li>Downsample</li>
+<li>AutoReload(sec)</li>
+</ul>
+</li>
+<li>Flow Link Details: The Flow view provides packet details with a known source and destination switch.<ul>
+<li>Flow Detail</li>
+<li>Flow Name</li>
+<li>Port</li>
+<li>Switch</li>
+<li>Vlan</li>
+<li>Status</li>
+<li>Maximum Bandwidth</li>
+<li>Graph - The Graph view provides traffic flow between ports of connecting switches, choose options:<ul>
+<li>Start_datetime</li>
+<li>End_datetime</li>
+<li>Metric</li>
+<li>Downsample</li>
+<li>AutoReload(sec)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Switch Details: Switch provide information of switch and number of ports. Click on Switch in topology view will show following details:<ul>
+<li>DPID</li>
+<li>Address</li>
+<li>Description</li>
+<li>Controller</li>
+<li>Port Details: Provides information of port with the following elements:<ul>
+<li>Interface Type</li>
+<li>Port Name</li>
+<li>Port Number</li>
+<li>Status</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="openkilda-subsystem-web-interface">
+<h2>OpenKilda Subsystem Web Interface<a class="headerlink" href="#openkilda-subsystem-web-interface" title="Permalink to this headline">¶</a></h2>
+<p>OpenKilda includes many sub-components that have web interfaces.  Here is a cheat sheet to access those web services:</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="17%" />
+<col width="83%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Storm</strong></td>
+<td><a class="reference external" href="http://127.0.0.1:8888">http://127.0.0.1:8888</a></td>
+</tr>
+<tr class="row-even"><td><strong>Neo4j</strong></td>
+<td><a class="reference external" href="http://127.0.0.1:7474">http://127.0.0.1:7474</a></td>
+</tr>
+<tr class="row-odd"><td><strong>OpenTSDB</strong></td>
+<td><a class="reference external" href="http://127.0.0.1:4242">http://127.0.0.1:4242</a></td>
+</tr>
+<tr class="row-even"><td><strong>HBASE</strong></td>
+<td><a class="reference external" href="http://127.0.0.1:8070">http://127.0.0.1:8070</a></td>
+</tr>
+<tr class="row-odd"><td><strong>Kibana</strong></td>
+<td><a class="reference external" href="http://127.0.0.1:5601">http://127.0.0.1:5601</a></td>
+</tr>
+<tr class="row-even"><td><strong>Swagger</strong></td>
+<td><a class="reference external" href="http://127.0.0.1:8088/api/v1/swagger-ui.html#/">http://127.0.0.1:8088/api/v1/swagger-ui.html#/</a></td>
+</tr>
+<tr class="row-odd"><td><strong>OpenKilda GUI</strong></td>
+<td><a class="reference external" href="http://127.0.0.1:8010/openkilda">http://127.0.0.1:8010/openkilda</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="loading-the-kibana-dashboards">
+<h2>Loading the Kibana Dashboards<a class="headerlink" href="#loading-the-kibana-dashboards" title="Permalink to this headline">¶</a></h2>
+<p>Default dashboards for Kibana have been added to the GitHub repository. To load these dashboards, OpenKilda has to be running. Navigate to the /tools/elk-dashboards folder:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> tools/elk-dashboards
+</pre></div>
+</div>
+<p>Run the load.sh script to add the dashboards to Kibana:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo ./load.sh
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../javadocs/index.html" class="btn btn-neutral float-right" title="Javadocs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../installation-guide/index.html" class="btn btn-neutral" title="Installation Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Kevin Austin
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

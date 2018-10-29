@@ -1,0 +1,293 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Contribution Guidelines &mdash; OpenKilda  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Installation Guide" href="../installation-guide/index.html" />
+    <link rel="prev" title="Introduction" href="../introduction/index.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/openkilda.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Contribution Guidelines</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#contributor-license-agreements">Contributor license agreements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#design-documents">Design Documents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#issues">Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#contributing-a-feature">Contributing a feature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pull-requests">Pull requests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#code-style">Code Style</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../installation-guide/index.html">Installation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gui/index.html">OpenKilda GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../javadocs/index.html">Javadocs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pce/index.html">Path Computation Engine (PCE)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../northbound-api/index.html">Northbound API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes/index.html">Release Notes</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">OpenKilda</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Contribution Guidelines</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/contribution/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="contribution-guidelines">
+<h1>Contribution Guidelines<a class="headerlink" href="#contribution-guidelines" title="Permalink to this headline">¶</a></h1>
+<p>The following sections outline the process all changes to the Kilda repositories go through. All changes, regardless of whether they are from newcomers to the community or from the core team follow the same process and are given the same level of review.</p>
+<ul class="simple">
+<li>Contributor license agreements</li>
+<li>Design Documents</li>
+<li>Issues</li>
+<li>Contributing a feature</li>
+<li>Pull requests</li>
+<li>Code Style</li>
+</ul>
+<div class="section" id="contributor-license-agreements">
+<h2>Contributor license agreements<a class="headerlink" href="#contributor-license-agreements" title="Permalink to this headline">¶</a></h2>
+<p>Pull requests will be accepted from those who have filled out the appropriate CLA</p>
+<p>This is necessary because you own the copyright to your changes, even after your contribution becomes part of this project. So this agreement simply gives us permission to use and redistribute your contributions as part of the project.</p>
+</div>
+<div class="section" id="design-documents">
+<h2>Design Documents<a class="headerlink" href="#design-documents" title="Permalink to this headline">¶</a></h2>
+<p>We tend to design the critical pieces of the system. Most of this design lives in the wiki. We’ll work on a better location for this work and the process for including this within the project.</p>
+</div>
+<div class="section" id="issues">
+<h2>Issues<a class="headerlink" href="#issues" title="Permalink to this headline">¶</a></h2>
+<p>GitHub issues can be used to report bugs or feature requests.</p>
+<p>When reporting a bug please include the following key pieces of information:</p>
+<p>the version of the project you were using (e.g. version number, git commit, …)
+operating system you are using
+the exact, minimal, steps needed to reproduce the issue. Submitting a 5 line script will get a much faster response from the team than one that’s hundreds of lines long.
+See the next section for information about using issues to submit feature requests.</p>
+</div>
+<div class="section" id="contributing-a-feature">
+<h2>Contributing a feature<a class="headerlink" href="#contributing-a-feature" title="Permalink to this headline">¶</a></h2>
+<p>In order to contribute a feature you’ll need to go through the following steps:</p>
+<p>Create a GitHub issue to track the discussion. The issue should include information about the requirements and use cases that it is trying to address.
+Include a discussion of the proposed design and technical details of the implementation in the issue.
+Once there is general agreement on the technical direction, submit a PR.
+If you would like to skip the process of submitting an issue and instead would prefer to just submit a pull request with your desired code changes then that’s fine. But keep in mind that there is no guarantee of it being accepted and so it is usually best to get agreement on the idea/design before time is spent coding it. However, sometimes seeing the exact code change can help focus discussions, so the choice is up to you.</p>
+</div>
+<div class="section" id="pull-requests">
+<h2>Pull requests<a class="headerlink" href="#pull-requests" title="Permalink to this headline">¶</a></h2>
+<p>If you’re working on an existing issue, simply respond to the issue and express interest in working on it. This helps other people know that the issue is active, and hopefully prevents duplicated efforts.</p>
+<p>To submit a proposed change:</p>
+<p>Fork the repository.
+Create a new branch for your changes.
+Develop the code/fix.
+Add new test cases. In the case of a bug fix, the tests should fail without your code changes. For new features try to cover as many variants as reasonably possible.
+Modify the documentation as necessary.
+Verify the entire CI process (building and testing) work.
+While there may be exceptions, the general rule is that all PRs should be 100% complete - meaning they should include all test cases and documentation changes related to the change.</p>
+<p>When ready, and assuming you’ve signed the CLA, submit the PR.</p>
+</div>
+<div class="section" id="code-style">
+<h2>Code Style<a class="headerlink" href="#code-style" title="Permalink to this headline">¶</a></h2>
+<p>When submitting code, please make every effort to follow existing OpenKilda conventions and style in order to keep the code as readable and clean as possible.</p>
+<p>OpenKilda uses Checkstyle to make sure that all the code follows those standards. Checkstyle failures during compilation indicate errors in your style and must be addressed before submitting the changes.</p>
+<p>Before start contributing with new code it is recommended to install IntelliJ CheckStyle-IDEA plugin and configure it to use OpenKilda’s checkstyle configuration file.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../installation-guide/index.html" class="btn btn-neutral float-right" title="Installation Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../introduction/index.html" class="btn btn-neutral" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Kevin Austin
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,344 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Path Computation Engine (PCE) &mdash; OpenKilda  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Northbound API" href="../northbound-api/index.html" />
+    <link rel="prev" title="Javadocs" href="../javadocs/index.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/openkilda.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribution/index.html">Contribution Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation-guide/index.html">Installation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gui/index.html">OpenKilda GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../javadocs/index.html">Javadocs</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Path Computation Engine (PCE)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#testing">Testing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#acceptance-tests">Acceptance Tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#unit-tests">Unit Tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#development">Development</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#notes">Notes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#algorithm-notes">Algorithm Notes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../northbound-api/index.html">Northbound API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes/index.html">Release Notes</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">OpenKilda</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Path Computation Engine (PCE)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/pce/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="path-computation-engine-pce">
+<h1>Path Computation Engine (PCE)<a class="headerlink" href="#path-computation-engine-pce" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>Most of the logic for path computation resides in the services/src/pce project.</p>
+<p>The initial implementation of the path algorithm relies on the mechanisms native to Neo4J - i.e. we have an abstraction for a path computer, and the initial / default implementation is Neo4J. The Neo4J driver is just a thin facade.</p>
+</div>
+<div class="section" id="testing">
+<h2>Testing<a class="headerlink" href="#testing" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="acceptance-tests">
+<h3>Acceptance Tests<a class="headerlink" href="#acceptance-tests" title="Permalink to this headline">¶</a></h3>
+<p>There are a couple of Acceptance Tests that exercise this code base:</p>
+<p>FlowPathTest.java</p>
+<p>PathComputationTest.java</p>
+<p>These are in the atdd project in</p>
+<p><code class="docutils literal notranslate"><span class="pre">services/src/atdd</span> <span class="pre">..</span> <span class="pre">src/test</span></code></p>
+</div>
+<div class="section" id="unit-tests">
+<h3>Unit Tests<a class="headerlink" href="#unit-tests" title="Permalink to this headline">¶</a></h3>
+<p>The PCE project has multiple unit tests that excercise most / all of the core logic.</p>
+</div>
+<div class="section" id="development">
+<h3>Development<a class="headerlink" href="#development" title="Permalink to this headline">¶</a></h3>
+<p>Here are the basic steps to getting up and running:</p>
+<ol class="arabic">
+<li><p class="first">Ensure you can run this maven project, run the tests, and they all should pass.</p>
+</li>
+<li><p class="first">Ensure you can run the acceptance tests:</p>
+<p><code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">atdd</span> <span class="pre">tags=&quot;&#64;PCE,&#64;FPATH&quot;</span></code></p>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="notes">
+<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
+<p>In addition to this sparse guide, there are more notes in PathComputationTests.java regarding how the acceptance is executed. That should give you a good guide to how the code comes together.</p>
+<p>SimpletGetShortestPath Algorithm
+Source: <code class="docutils literal notranslate"><span class="pre">open-kilda/services/src/pce/src/main/java/org/openkilda/pce/algo</span></code></p>
+<p>This algorithm is optimized for finding a bidirectional path between the start and end nodes.</p>
+<blockquote>
+<div><ul class="simple">
+<li>It uses elements of depth first, breadth first, and shortest path (weight) algorithms.</li>
+</ul>
+</div></blockquote>
+<p>For neighboring switches, it assumes there is only one link between them. The network that is</p>
+<blockquote>
+<div><ul class="simple">
+<li>passed in should reflect the links that should be traversed.</li>
+</ul>
+</div></blockquote>
+<div class="section" id="algorithm-notes">
+<h3>Algorithm Notes<a class="headerlink" href="#algorithm-notes" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>1. forward = get path (src, dst)
+2. reverse = get path (dst, src, hint=forward)
+3. get path:
+
+     0. allowedDepth = 35
+     √ . go breadth first (majority of switches probably have 5 hops or less)
+     √ . add cost
+     . compare against bestCost (if greater, then return)
+     . have we visited this node before?
+         - if so, was it cheaper? Yes? return.
+         - No, remove the prior put. We
+       and any downstream cost (BUT .. maybe we stopped somewhere and need to continue?
+       Probably could just replace the old one with the current one and add the children as unvisited?
+       Oooh .. this could cause a loop.. if there are negative costs
+         - So, should probably track path to this point...
+     . if node = target, update bestCost, return
+     . add each neighbor to the investigation list, where neighbor.outbound.dst != current node.
+</pre></div>
+</div>
+<p>SimpleISL</p>
+<p>Call this method to find a path from start to end (srcDpid to dstDpid), particularly if you</p>
+<p>have no idea if the path exists or what the best path is.
+An ordered list that represents the path from start to end, or an empty list will be returned</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="o">*/</span>
+
+  <span class="o">/</span> <span class="n">Determine</span> <span class="k">if</span> <span class="n">this</span> <span class="n">node</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">destination</span> <span class="n">node</span><span class="o">.</span>   <span class="n">We</span> <span class="n">found</span> <span class="n">the</span> <span class="n">destination</span>    <span class="n">We</span> <span class="n">found</span> <span class="n">a</span> <span class="n">best</span> <span class="n">path</span><span class="o">.</span> <span class="n">If</span> <span class="n">we</span> <span class="n">don</span><span class="s1">&#39;t get here, then the entire graph will be</span>
+                  <span class="n">searched</span> <span class="n">until</span> <span class="n">we</span> <span class="n">run</span> <span class="n">out</span> <span class="n">of</span> <span class="n">nodes</span> <span class="ow">or</span> <span class="n">the</span> <span class="n">depth</span> <span class="ow">is</span> <span class="n">reached</span><span class="o">.</span>
+
+<span class="n">We</span> <span class="n">found</span> <span class="n">dest</span><span class="p">,</span> <span class="n">no</span> <span class="n">need</span> <span class="n">to</span> <span class="n">keep</span> <span class="n">processing</span>
+
+<span class="n">Otherwise</span><span class="p">,</span> <span class="k">if</span> <span class="n">we</span><span class="s1">&#39;ve been here before, see if this path is better    We&#39;</span><span class="n">ve</span> <span class="n">already</span> <span class="n">visited</span> <span class="n">this</span> <span class="n">one</span> <span class="o">..</span> <span class="n">keep</span> <span class="n">going</span> <span class="n">only</span> <span class="k">if</span> <span class="n">this</span> <span class="ow">is</span> <span class="n">cheaper</span>
+
+<span class="n">Either</span> <span class="n">this</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">first</span> <span class="n">time</span><span class="p">,</span> <span class="ow">or</span> <span class="n">this</span> <span class="ow">is</span> <span class="n">cheaper</span> <span class="o">..</span> <span class="n">either</span> <span class="n">way</span><span class="p">,</span> <span class="n">this</span> <span class="n">node</span> <span class="n">should</span>
+            <span class="n">be</span> <span class="n">the</span> <span class="n">one</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">visited</span> <span class="nb">list</span>
+
+<span class="n">Stop</span> <span class="n">processing</span> <span class="n">entirely</span> <span class="k">if</span> <span class="n">we</span><span class="s1">&#39;ve gone too far, or over bestCost</span>
+
+<span class="n">At</span> <span class="n">this</span> <span class="n">stage</span> <span class="o">..</span> <span class="n">haven</span><span class="s1">&#39;t found END, haven&#39;</span><span class="n">t</span> <span class="n">gone</span> <span class="n">too</span> <span class="n">deep</span><span class="p">,</span> <span class="ow">and</span> <span class="n">we</span> <span class="n">are</span> <span class="ow">not</span> <span class="n">over</span> <span class="n">cost</span><span class="o">.</span>
+            <span class="n">So</span><span class="p">,</span> <span class="n">add</span> <span class="n">the</span> <span class="n">outbound</span> <span class="n">isls</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>This is generally called after getPath() to find the path back.  The path back could be
+asymmetric, but this will increase the odds that we return the symmetric path if it exists.
+The hint will be used to determine if it exists.  If it does, then use it as the start
+bestCost and bestPath.  That should help speed things along.
+Whereas it’s possible that could build up the SearchNodes for this path (if found) and put</p>
+<p>them into the visited bucket, we’ll start without that optimization and decide later whether
+adding it provides any efficiencies</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../northbound-api/index.html" class="btn btn-neutral float-right" title="Northbound API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../javadocs/index.html" class="btn btn-neutral" title="Javadocs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Kevin Austin
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
